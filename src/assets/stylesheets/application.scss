@@ -1,0 +1,23 @@
+// ------------------ Fonts
+@import "~@fontsource/montserrat/100.css";
+@import "~@fontsource/montserrat/400.css";
+@import "~@fontsource/montserrat/600.css";
+@import "~@mdi/font/css/materialdesignicons.min.css";
+
+// ------------------ Modules
+@import "~nano-grid/scss/nano-grid";
+@import "~nano-grid/scss/btn";
+// @import "~nano-grid/scss/scroll-area";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
