@@ -1,19 +1,47 @@
-import {validateSize} from "nano-grid/ts/columns-manager.ts";
+import Icon from './icon.jsx';
 const classNames = require('classnames');
 
-const Btn = (props = { children: undefined, size: undefined, mode: "column", tag: "div", tableElement: false }) => {
-  const classes = classNames(validateSize(props.size), props.mode);
+const Btn = (
+  props = {
+    tag: undefined,
+    glyph: undefined,
+    size: undefined,
+    value: undefined,
+    color: undefined,
+    active: undefined,
+    to: undefined,
+  }) => {
+  const computedLabel = props.value ? `${props.value} button` : "";
+  const computedClasses = classNames(
+    "btn",
+    "flat",
+    props.size,
+    props.color,
+    props.size,
+    {
+      'active': props.active,
+      'icon': props.glyph,
+    },
+  );
+  
   return (
-    <div className={classes} role={classNames({"cell": props.tableElement})}>
-      {props.children}
-    </div>
+    <button
+      className={computedClasses}
+      role="button"
+      aria-label={computedLabel}
+    >
+      <Icon glyph={props.glyph} />
+      <span>
+        {props.value}
+      </span>
+    </button>
   );
 }
 
-Column.defaultProps = {  
-  mode: "column",
-  tag: "div",
-  tableElement: false
+Btn.defaultProps = {  
+  tag: "button",
+  color: "gravel",
+  active: false,
 }
 
-export default Column;
+export default Btn;
