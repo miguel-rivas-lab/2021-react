@@ -13,7 +13,7 @@ const Image3D = (
 
   return (
     <div className={computedClasses}>
-      <img src={props.src} />
+      <img src={props.src} alt="Perspective"/>
     </div>
   );
 }

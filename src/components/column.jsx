@@ -8,9 +8,12 @@ const Column = (
     mode: undefined,
     tag: undefined,
     tableElement: undefined,
+    className: undefined,
+    
   }) => {
   const computedClasses = classNames(
     props.mode,
+    props.className,
     validateSize(props.size),
   );
   const computedRole = classNames({"cell": props.tableElement});

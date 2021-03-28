@@ -1,3 +1,4 @@
+import {validateSpacing} from "nano-grid/ts/columns-manager.ts";
 const classNames = require('classnames');
 
 const Row = (
@@ -8,15 +9,15 @@ const Row = (
     tableElement: undefined,
     squareTag: undefined,
     group: undefined,
-    content: undefined,
     integrate: undefined,
+    spacing: undefined,
   }) => {
   const computedClasses = classNames(
     "nano-row",
+    validateSpacing(props.spacing),
     {
       'nano-group': props.group,
       'integrate': props.integrate,
-      'content': props.content,
     },
   );
   const computedRole = classNames({
@@ -39,9 +40,9 @@ Row.defaultProps = {
   tableElement: false,
   isHeading: false,
   group: false,
-  content: false,
   integrate: false,
   squareTag: false,
+  spacing: 0,
 }
 
 export default Row;

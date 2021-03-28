@@ -2,6 +2,7 @@
   "name": "miguel-rivas-2021",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://miguel-rivas.github.io/miguel-rivas-2021",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -15,7 +16,7 @@
   "devDependencies": {
     "@fontsource/montserrat": "^4.2.2",
     "@mdi/font": "^5.9.55",
-    "nano-grid": "file: ../../../../projects_node/nano-grid-module",
+    "nano-grid": "file:../../projects_node/nano-grid-module",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2"
   },

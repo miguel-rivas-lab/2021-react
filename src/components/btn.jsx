@@ -10,13 +10,14 @@ const Btn = (
     color: undefined,
     active: undefined,
     to: undefined,
+    className: undefined,
   }) => {
   const computedLabel = props.value ? `${props.value} button` : "";
   const computedClasses = classNames(
     "btn",
-    "flat",
     props.size,
     props.color,
+    props.className,
     props.size,
     {
       'active': props.active,
@@ -25,16 +26,19 @@ const Btn = (
   );
   
   return (
-    <button
+    <a
       className={computedClasses}
       role="button"
       aria-label={computedLabel}
+      href={props.to}
+      target="_blank"
+      rel="noreferrer"
     >
       <Icon glyph={props.glyph} />
       <span>
         {props.value}
       </span>
-    </button>
+    </a>
   );
 }
 

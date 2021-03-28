@@ -9,17 +9,18 @@ const Icon = (
     direction: undefined,
   }) => {
 
-    const computedMode = () => {
-      switch(props.mode){
-        case 'mdi':
-          return `mdi-${props.glyph}`;
-        default:
-          return props.glyph;
-      };
-    }
+    // const computedMode = () => {
+    //   switch(props.mode){
+    //     case 'mdi':
+    //       return `mdi-${props.glyph}`;
+    //     default:
+    //       return props.glyph;
+    //   };
+    // }
 
     const computedClasses = classNames(
-      computedMode,
+      'mdi',
+      `mdi-${props.glyph}`,
       props.color,
       props.glyph,
       props.direction,
@@ -32,10 +33,10 @@ const Icon = (
       <span className={computedClasses} />
     );
   }
-  
+
   Icon.defaultProps = {  
     tag: "span",
-    mode: "icon",
+    mode: "mdi",
   }
     
 export default Icon;
