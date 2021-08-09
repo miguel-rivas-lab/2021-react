@@ -39,6 +39,7 @@ export const user = {
     angular: "Angular",
     react: "React",
     grunt: "GruntJs",
+    three: "ThreeJS",
     jQuery: "jQuery",
     json: "JSON",
     miva: "Miva",
@@ -68,6 +69,7 @@ export const user = {
     motionGraphics: "Motion Graphics",
     animation3D: "3D Animation",
     document: "Documentation",
+    module: "Module",
   }
   
   const client = {
@@ -85,6 +87,7 @@ export const user = {
     orange: "Orange",
     apap: "APAP",
     enovational: "Enovational",
+    socialNetwork: "Social Network",
   };
   
   const linkWeb = (item) => {
@@ -311,7 +314,6 @@ export const user = {
         tools: [
             tool.haml,
             tool.css,
-            tool.bootstrap,
             tool.git,
             tool.photoshop,
             tool.rails
@@ -838,6 +840,60 @@ export const user = {
         role: [
             role.design,
         ],
+    },
+    {
+        date: "2021/03/22",
+        title: "Nano Grid",
+        type: mode.module,
+        role: [
+            role.frontend,
+        ],
+        client: client.miguelRivas,
+        tools: [
+            tool.vue,
+            tool.sass,
+        ],
+        links: {
+            web: [
+                {url: "https://www.npmjs.com/package/nano-grid", text: "Node Module"},
+            ],
+            github: "https://github.com/jmiguelrivas/nano-grid-module",
+        },
+    },
+    {
+        date: "2021/02/27",
+        title: "3D Graph Colors",
+        type: mode.prototype,
+        role: [
+            role.frontend,
+        ],
+        client: client.enovational,
+        tools: [
+            tool.javascript,
+            tool.three,
+        ],
+        links: {
+            codepen: linkCodepen("dyOmXWO"),
+        },
+    },
+    {
+        date: "2014/02/09",
+        title: "Print Portfolio",
+        type: mode.document,
+        role: [
+            role.design,
+        ],
+        client: client.miguelRivas,
+        tools: [
+            tool.indesign,
+        ],
+        links: {
+            web: [
+                {url: "https://issuu.com/jemiguelrivas/docs/ptf3_005", text: "Portfolio 3"},
+                {url: "https://issuu.com/jemiguelrivas/docs/ptf2_000", text: "Portfolio 2"},
+                {url: "https://issuu.com/jemiguelrivas/docs/ptf1_000", text: "Portfolio 1"},
+            ],
+        },
     },
   ].sort(function(a,b){
     return new Date(b.date) - new Date(a.date);
