@@ -84,6 +84,7 @@ export const user = {
     voxel: "Voxel Cube Games",
     orange: "Orange",
     apap: "APAP",
+    enovational: "Enovational",
   };
   
   const linkWeb = (item) => {
@@ -119,7 +120,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("presidente-destapa-coro"),
+                {url: linkWeb("presidente-destapa-coro"), text: "App"},
             ],
             github: linkGithub("presidente-destapa-coro"),
         },
@@ -157,8 +158,8 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("presidente-carnaval-2015/filter.html"),
-                linkWeb("presidente-carnaval-2015/home.html"),
+                {url: linkWeb("presidente-carnaval-2015/filter.html"), text: "Filter"},
+                {url: linkWeb("presidente-carnaval-2015/home.html"), text: "Home"},
             ],
             github: linkGithubDev("presidente-carnaval-2015"),
         },
@@ -194,7 +195,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("presidente-retro-brindis"),
+                {url: linkWeb("presidente-retro-brindis"), text: "App"},
             ],
             github: linkGithubDev("presidente-retro-brindis"),
         },
@@ -217,7 +218,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("apap-mineriza-familia"),
+                {url: linkWeb("apap-mineriza-familia"), text: "App"},
             ],
             github: linkGithubDev("apap-mineriza-familia"),
             vimeo: "https://vimeo.com/211801157",
@@ -225,7 +226,7 @@ export const user = {
     },
     {
         date: "2015/12/16",
-        title: "Verano Presidente 2015: Filter",
+        title: "Verano Presidente 2015",
         linkDirect: false,
         type: mode.prototype,
         role: [
@@ -239,33 +240,15 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("presidente-verano-2015"),
+                {url: linkWeb("presidente-verano-2015"), text: "Filter"},
+                {url: linkWeb("presidente-loader"), text: "Loader"},
             ],
             github: linkGithubDev("presidente-verano-2015"),
         },
     },
     {
-        date: "2015/12/16",
-        title: "Presidente: Loader",
-        type: mode.prototype,
-        role: [
-            role.frontend,role.design
-        ],
-        client: client.presidente,
-        tools: [
-            tool.html,
-            tool.css
-        ],
-        links: {
-            web: [
-                linkWeb("presidente-loader"),
-            ],
-            github: linkGithubDev("presidente-loader"),
-        },
-    },
-    {
         date: "2016/02/22",
-        title: "DrLogic",
+        title: "Website",
         linkDirect: false,
         type: mode.app,
         role: [
@@ -282,18 +265,19 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("drlogic/home.html"),
-                linkWeb("drlogic/about-us.html"),
-                linkWeb("drlogic/contact-us.html"),
-                linkWeb("drlogic/portfolio.html"),
-                linkWeb("drlogic/404.html"),
+                {url: linkWeb("drlogic/home.html"), text: "Home"},
+                {url: linkWeb("drlogic/about-us.html"), text: "About Us"},
+                {url: linkWeb("drlogic/contact-us.html"), text: "Contact Us"},
+                {url: linkWeb("drlogic/portfolio.html"), text: "Portfolio"},
+                {url: linkWeb("drlogic/404.html"), text: "404"},
             ],
+            vimeo: "https://vimeo.com/207152756",
             github: linkGithubDev("drlogic"),
         },
     },
     {
         date: "2016/06/16",
-        title: "Pixel PT",
+        title: "Server Prompt",
         type: mode.prototype,
         role: [
             role.frontend,
@@ -309,8 +293,8 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("pixel-server-prompt/404"),
-                linkWeb("pixel-server-prompt/500"),
+                {url: linkWeb("pixel-server-prompt/404"), text: "404"},
+                {url: linkWeb("pixel-server-prompt/500"), text: "500"},
             ],
             github: linkGithubDev("pixel-server-prompt"),
         },
@@ -334,7 +318,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("voxel-animation"),
+                {url: linkWeb("voxel-animation"), text: "Animated Header"},
             ],
             github: linkGithubDev("voxel-animation"),
         },
@@ -348,7 +332,8 @@ export const user = {
         ],
         client: client.orange,
         tools: [
-            tool.flash
+            tool.flash,
+            tool.premiere,
         ],
         links: {
             vimeo: "https://vimeo.com/212177083",
@@ -356,7 +341,7 @@ export const user = {
     },
     {
         date: "2014/01/14",
-        title: "Descubria",
+        title: "Website",
         type: client.app,
         role: [
             role.frontend,
@@ -369,7 +354,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("descubria"),
+                {url: linkWeb("descubria"), text: "Home"},
             ],
             github: linkGithubDev("descubria"),
         },
@@ -390,7 +375,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("capital-dbg-server-prompt"),
+                {url: linkWeb("capital-dbg-server-prompt"), text: "Prototype"},
             ],
             github: linkGithub("capital-dbg-server-prompt"),
         },
@@ -414,7 +399,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("main-front"),
+                {url: linkWeb("main-front"), text: "App"},
             ],
             github: linkGithubDev("main-front"),
         },
@@ -438,7 +423,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("css-study"),
+                {url: linkWeb("css-study"), text: "App"},
             ],
             github: linkGithubDev("css-study"),
         },
@@ -465,7 +450,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("evolution-web"),
+                {url: linkWeb("evolution-web"), text: "App"},
             ],
             github: linkGithubDev("evolution-web"),
         },
@@ -578,7 +563,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("svg-101"),
+                {url: linkWeb("svg-101"), text: "Prototype"},
             ],
             github: linkGithubDev("svg-101"),
         },
@@ -605,7 +590,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("tetravex"),
+                {url: linkWeb("tetravex"), text: "App"},
             ],
             github: linkGithubDev("tetravex"),
         },
@@ -626,7 +611,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("flat-css"),
+                {url: linkWeb("flat-css"), text: "App"},
             ],
             github: linkGithubDev("flat-css"),
         },
@@ -684,6 +669,7 @@ export const user = {
     },
     {
         date: "2016/11/21",
+        title: "Wurlex",
         type: mode.animation3D,
         role: [
             role.animation,role.design
@@ -699,7 +685,7 @@ export const user = {
     },
     {
         date: "2014/03/22",
-        title: "Screens Portfollio",
+        title: "Screens Portfolio",
         type: mode.app,
         role: [
             role.design,
@@ -714,7 +700,7 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("miguel-rivas-2014"),
+                {url: linkWeb("miguel-rivas-2014"), text: "App"},
             ],
             github: linkGithubDev("miguel-rivas-2014"),
         },
@@ -736,9 +722,29 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("miguel-rivas-2016"),
+                {url: linkWeb("miguel-rivas-2016"), text: "App"},
             ],
             github: linkGithubDev("miguel-rivas-2016"),
+        },
+    },
+    {
+        date: "2021/03/26",
+        title: "Gallery Portfolio",
+        type: mode.app,
+        role: [
+            role.design,
+            role.frontend,
+        ],
+        client: client.miguelRivas,
+        tools: [
+            tool.react,
+            tool.sass,
+        ],
+        links: {
+            web: [
+                {url: linkWeb("miguel-rivas-2021"), text: "App"},
+            ],
+            github: linkGithubDev("miguel-rivas-2021"),
         },
     },
     {
@@ -756,13 +762,14 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("miguel-rivas-2018"),
-                linkWeb("miguel-rivas-2018/drlogic.html"),
-                linkWeb("miguel-rivas-2018/apap.html"),
-                linkWeb("miguel-rivas-2018/bpr.html"),
-                linkWeb("miguel-rivas-2018/presidente.html"),
-                linkWeb("miguel-rivas-2018/tests.html"),
+                {url: linkWeb("miguel-rivas-2018"), text: "Home"},
+                {url: linkWeb("miguel-rivas-2018/drlogic.html"), text: "DrLogic"},
+                {url: linkWeb("miguel-rivas-2018/apap.html"), text: "Apap"},
+                {url: linkWeb("miguel-rivas-2018/bpr.html"), text: "BPR Bank"},
+                {url: linkWeb("miguel-rivas-2018/presidente.html"), text: "Presidente"},
+                {url: linkWeb("miguel-rivas-2018/tests.html"), text: "Tests"},
             ],
+            vimeo: "https://vimeo.com/260621089",
             github: linkGithubDev("miguel-rivas-2018"),
         },
     },
@@ -787,15 +794,118 @@ export const user = {
         ],
         links: {
             web: [
-                linkWeb("html-love"),
+                {url: linkWeb("html-love"), text: "App"},
             ],
             github: linkGithubDev("html-love"),
         },
     },
-  ];
+    {
+        date: "2015/10/28",
+        title: "Pixel PT Test",
+        type: mode.landingPage,
+        role: [
+            role.frontend,
+            role.design,
+        ],
+        client: client.pixelPerfectTree,
+        tools: [
+            tool.pug,
+            tool.sass,
+            tool.jQuery,
+            tool.illustrator
+        ],
+        links: {
+            web: [
+                {url: linkWeb("test-pixel-perfect-tree"), text: "Test"},
+            ],
+            github: linkGithub("test-pixel-perfect-tree"),
+        },
+    },
+    {
+        client: client.presidente,
+        title: "Destapa el Coro",
+        date: "2014/06/02",
+        links: {
+            web: [
+                {url: linkWeb("presidente-destapa-coro"), text: "App"},
+            ],
+            github: linkGithub("presidente-destapa-coro"),
+        },
+        tools: [
+            tool.illustrator,
+        ],
+        type: mode.userFlow,
+        role: [
+            role.design,
+        ],
+    },
+  ].sort(function(a,b){
+    return new Date(b.date) - new Date(a.date);
+  });
+
+/*
+    {
+    	date: "2021/03/22",
+    	title: "Nano Grid",
+    	type: mode.app,
+    	role: [
+        role.frontend,
+        role.design,
+    ],
+    	client: client.miguelRivas,
+    	tools: [
+            tool.vue,
+            tool.sass,
+        ],
+        links: {
+            web: [
+                {url: linkWeb("nano-grid"), text: "App"},
+            ],
+            github: linkGithubDev("nano-grid"),
+        },
+    },
+
+    {
+        date: "2021/03/28",
+        title: "Gallery Portfolio",
+        type: mode.app,
+        role: [
+            role.design,
+            role.frontend,
+        ],
+        client: client.miguelRivas,
+        tools: [
+            tool.react,
+            tool.sass,
+        ],
+        links: {
+            web: [
+                {url: linkWeb("miguel-rivas-2021"), text: "App"},
+            ],
+            github: linkGithubDev("miguel-rivas-2021"),
+        },
+    },
+    {
+    	date: "2020/05/05",
+    	title: "Popkern",
+    	type: mode.app,
+    	role: [
+        role.frontend,
+        role.design,
+    ],
+    	client: client.enovational,
+    	tools: [
+            tool.vue,
+            tool.rails,
+            tool.slim,
+            tool.sass,
+    	]
+    },
+*/
+
 
   /*
-   {
+    {
     	date: "2012/09/26",
     	title: "Tips of Design",
     	type: "Book",
@@ -807,7 +917,6 @@ export const user = {
     		tool.indesign,
     	]
     },
-    
     {
     	date: "2017/03/05",
     	title: "Art Direction",
@@ -885,24 +994,6 @@ export const user = {
         ]
     },
     {
-        client: client.presidente,
-        title: "Destapa el Coro",
-        date: "2014/06/02",
-        links: {
-            web: [
-                linkWeb("presidente-destapa-coro"),
-            ],
-            github: linkGithub("presidente-destapa-coro"),
-        },
-        tools: [
-            tool.illustrator,
-        ],
-        type: mode.userFlow,
-        role: [
-            role.design,
-        ],
-    },
-    {
         date: "2014/11/05",
         title: "Pronosticos",
         type: mode.wireframe,
@@ -937,23 +1028,8 @@ export const user = {
         tools: [
             tool.illustrator
         ]
-    }
-    {
-        date: "2015/10/28",
-        title: "Pixel PT Test",
-        type: mode.landingPage,
-        role: [
-            role.frontend,
-            role.design,
-        ],
-        client: client.pixelPerfectTree,
-        tools: [
-            tool.pug,
-            tool.sass,
-            tool.jQuery,
-            tool.illustrator
-        ]
     },
+    
     {
         date: "2017/08/04",
         title: "Chakras",

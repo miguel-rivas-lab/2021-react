@@ -5,33 +5,36 @@ import Icon from './components/icon.jsx';
 import Image3D from './components/image.jsx';
 import {projects} from './database';
 
-function App() {
+function getImage(client, date, index){
+  client = client.replace(/\s/g, '').toLowerCase();
+  date = date.replace(/\//g, '');
+  return `https://miguel-rivas.github.io/zapp/img/projects/${client}-${date}-${index + 1}.png`;
+}
 
-  
+function App() {
   const articles = [];
   for(let [index, project] of projects.entries()){
-    let gallery = [];
-    let multipleProjects = project.links?.web?.length > 1;
-    if(multipleProjects){
-      for(let [index3, item] of project.links.web.entries()){
-        gallery.push(
-          <a href={item} key={`link-${index}-${index3}`} target="_blank" rel="noreferrer">
-            <Image3D src="https://via.placeholder.com/300x462" size="sm" />
-          </a>
+    let navigation = [];
+    if(project.links.web){
+      for(let [projectIndex, item] of project.links.web.entries()){
+        navigation.push(
+          <li key={`link-${index}-${projectIndex}`}>
+            <a href={item.url} target="_blank" rel="noreferrer">
+              {item.text}
+            </a>
+          </li>
         );
       }
     }
 
-    let codepen = project.links.codepen ? <li><a className="btn icon gravel" target="_blank" href={project.links.codepen}><Icon glyph="codepen" /></a></li> : [];
-    let vimeo = project.links.vimeo ? <li><a className="btn icon gravel" target="_blank" href={project.links.vimeo}><Icon glyph="vimeo" /></a></li> : [];
-    let github = project.links.github ? <li><a className="btn icon gravel" target="_blank" href={project.links.github}><Icon glyph="github" /></a></li> : [];
-    let web = project.links.web ? <li><a className="btn icon gravel" target="_blank" href={project.links.web[0]}><Icon glyph="web" /></a></li> : [];
+    let codepen = project.links.codepen ? <li><a className="btn gravel" target="_blank" href={project.links.codepen}><Icon glyph="codepen" /> Codepen</a></li> : [];
+    let vimeo = project.links.vimeo ? <li><a className="btn gravel" target="_blank" href={project.links.vimeo}><Icon glyph="vimeo" /> Vimeo</a></li> : [];
+    let github = project.links.github ? <li><a className="btn gravel" target="_blank" href={project.links.github}><Icon glyph="github" /> Github</a></li> : [];
 
     let links = [];
-    if(codepen || vimeo || github || web) {
+    if(codepen || vimeo || github) {
       links = [
         <ul className="links">
-          {web}
           {github}
           {codepen}
           {vimeo}
@@ -47,25 +50,25 @@ function App() {
     }
 
     articles.push(
-      <article key={`article-${index}`}>
-        <Row spacing="100">
-          <Column size="45%">
+      <Column size="25%">
+        <article key={`article-${index}`}>
+          <div className="content">
+            {/* <Image3D src={getImage(project.client, project.date, 0)} size="lg" /> */}
             <h3>{project.client}</h3>
             <h4>{project.title}</h4>
             <h5><time>{project.date}</time></h5>
             <ul className="skills">
               {skills}
             </ul>
+            <hr/>
+            <ul className="navigation">
+              {navigation}
+            </ul>
             {links}
-          </Column>
-          <Column size="55%">
-            <Image3D src="https://via.placeholder.com/300x462" size="lg" />
-          </Column>
-        </Row>
-        <div className="docs-gallery">
-          {gallery}
-        </div>
-      </article>
+          </div>
+          <span className={ project.client[0].toLowerCase() + " bk"}>{project.client[0].toLowerCase()}</span>
+        </article>
+      </Column>
     )
   }
 
@@ -75,21 +78,16 @@ function App() {
         <div className="container">
           <h1>Miguel Rivas</h1>
           <h2>Frontend Developer</h2>
-          {/* <select>
-            <option value="all">All Project</option>
-          </select> */}
         </div>
       </header>
 
       <section>
         <div className="container">
-          {articles}
+          <Row spacing="100">
+            {articles}
+          </Row>
         </div>
       </section>
-
-      <footer>
-        Miguel Rivas // 2021
-      </footer>
     </>
   );
 }

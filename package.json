@@ -16,7 +16,7 @@
   "devDependencies": {
     "@fontsource/montserrat": "^4.2.2",
     "@mdi/font": "^5.9.55",
-    "nano-grid": "file:../../projects_node/nano-grid-module",
+    "nano-grid": "file:../../../projects_node/nano-grid-module",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2"
   },
