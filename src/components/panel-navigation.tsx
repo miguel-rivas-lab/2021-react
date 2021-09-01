@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import Row from './row';
 import Column from './column';
+import { Link } from 'react-router-dom';
 
 function PanelNavigation(): ReactElement {
   return (
@@ -8,9 +9,12 @@ function PanelNavigation(): ReactElement {
       <div className="container">
         <Row vertical={true}>
           <Column size="100%-35*2">
-            <button className="flat btn icon gravel md tooltip home">
+            <Link to="/" className="flat btn icon gravel md tooltip home">
               <span className="mdi mdi-monster" />
-            </button>
+            </Link>
+            <Link to="/monitor" className="flat btn icon gravel md tooltip home">
+              <span className="mdi mdi-monster" />
+            </Link>
           </Column>
           <Column mode="suffix" size="35">
             <button className="flat btn icon charcoal md tooltip theme">

@@ -1,11 +1,11 @@
 import { ReactElement} from "react";
 
-function Home(): ReactElement {
+function Monitor(): ReactElement {
   return (
     <div>
-      home
+      monitor
     </div>
   );
 }
 
-export default Home;
+export default Monitor;
