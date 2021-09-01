@@ -5,7 +5,7 @@ import classNames from 'classnames';
 type ColumnProps = {
   children?: ReactNode,
   size: string,
-  mode: string,
+  mode: "column" | "prefix" | "suffix",
   addClass?: string,
   tableElement: boolean,
 }
