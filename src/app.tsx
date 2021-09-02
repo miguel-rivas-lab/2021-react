@@ -3,38 +3,59 @@ import Row from './components/row';
 import Column from './components/column';
 import PanelNavigation from './components/panel-navigation';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './views/home';
-import Monitor from './views/monitor';
 import { useSelector } from 'react-redux';
 import classNames from "classnames";
+// ---------- Views
+import HomeWorkarea from './views/home-workarea';
+import HomePanel from './views/home-panel';
+import MonitorWorkarea from './views/monitor-workarea';
+import MonitorPanel from './views/monitor-panel';
+import ServerWorkarea from './views/server-workarea';
+import ServerPanel from './views/server-panel';
 
 function App() {
+  const { panelVisibility } = useSelector((state: any) => state.panelVisibility);
   const { theme } = useSelector((state: any) => state.theme);
-  const appClasses = classNames("react-theme", {
+  const appClasses = classNames("react-theme", "section-home", {
     "nano-dark": !theme,
     "nano-light": theme,
   });
+
   return (
-    <main className={appClasses}>
-      <Router>
+    <Router>
+      <main className={appClasses}>
         <Row addClass="nano-app">
           <PanelNavigation />
-          <Column size="100%-50">
+          <Column size="350" addClass={classNames("panel", "router-area", { 'hide-panel': !panelVisibility })}>
             <Switch>
               <Route exact path="/">
-                <Home />
+                <HomePanel />
               </Route>
               <Route exact path="/monitor">
-                <Monitor />
+                <MonitorPanel />
+              </Route>
+              <Route exact path="/server">
+                <ServerPanel />
+              </Route>
+            </Switch>
+          </Column>
+          <Column size={panelVisibility ? '100%-350' : '100%-50'} addClass="workarea">
+            <Switch>
+              <Route exact path="/">
+                <HomeWorkarea />
+              </Route>
+              <Route exact path="/monitor">
+                <MonitorWorkarea />
+              </Route>
+              <Route exact path="/server">
+                <ServerWorkarea />
               </Route>
             </Switch>
           </Column>
         </Row>
-      </Router>
-    </main>
+      </main>
+    </Router>
   );
 }
-
-{/*  */ }
 
 export default App;

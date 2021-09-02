@@ -10,7 +10,7 @@ export const themeSlice = createSlice({
       state.theme = !state.theme;
     },
     setTheme: (state, action) => {
-      state.theme += action.payload;
+      state.theme = action.payload;
     }
   }
 });

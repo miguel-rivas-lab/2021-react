@@ -4,7 +4,6 @@ import App from './app';
 import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
 import './stylesheets/application.scss';
-import './modules/db-organizer';
 import store from './redux/store';
 
 ReactDOM.render(
