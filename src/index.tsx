@@ -1,14 +1,18 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
+import { StrictMode } from "react";
 import App from './app';
+import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
 import './stylesheets/application.scss';
 import './modules/db-organizer';
+import store from './redux/store';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </StrictMode>,
   document.getElementById('app')
 );
 

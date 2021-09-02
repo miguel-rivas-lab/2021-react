@@ -14,7 +14,7 @@ db.collection("users")
   .doc("main")
   .get()
   .then((doc) => {
-    console.table(doc.data());
+    // console.table(doc.data());
   });
 
 db.collection('projects')
@@ -57,5 +57,5 @@ db.collection('projects')
 
       return project;
     });
-    console.table(projectsDB);
+    // console.table(projectsDB);
   });
