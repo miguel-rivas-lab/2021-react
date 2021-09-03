@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import classNames from "classnames";
 // ---------- Views
-import HomeWorkarea from './views/home-workarea';
-import HomePanel from './views/home-panel';
+import HomeWorkarea from './views/home-workarea.jsx';
+import HomePanel from './views/home-panel.jsx';
 import MonitorWorkarea from './views/monitor-workarea';
 import MonitorPanel from './views/monitor-panel';
 import ServerWorkarea from './views/server-workarea';

@@ -5,7 +5,7 @@ import { clientEnum } from "../enums/clients";
 import { categoryEnum } from "../enums/categories";
 
 // import h from "./helpers";
-// import { db } from "./firebase-db";
+// import { db } from "./firebase";
 
 const users = {
   "name": "Jesus",
