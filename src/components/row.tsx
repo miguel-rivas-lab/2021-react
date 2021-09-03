@@ -1,15 +1,17 @@
 import { ReactElement, ReactNode } from "react";
 import { validateSpacing } from "nano-grid/modules/columns-manager";
 import classNames from 'classnames';
+import { breakpointsType } from "../types/breakpoints";
+import { spacingType } from "../types/spacing";
 
 type RowProps = {
   children?: ReactNode,
   addClass?: string,
-  breakpoint?: "" | "sm" | "md" | "lg" | "xl" | "xll",
+  breakpoint?: breakpointsType,
   tableElement: boolean,
   group: boolean,
   integrate: boolean,
-  spacing: 25 | 50 | 75 | 100 | 125 | 150 | 175 | 200 | 225 | 250 | 275 | 300 | 325 | 350 | 375 | 400,
+  spacing: spacingType,
   vertical: boolean,
 }
 

@@ -27,7 +27,7 @@ function Navigation(): ReactElement {
   const dispatch = useDispatch();
   const navigationRoutes = [
     { icon: "monster", route: "home", path: "/" },
-    { icon: "chart-bar", route: "monitor", path: "/monitor" },
+    // { icon: "chart-bar", route: "monitor", path: "/monitor" },
     { icon: "server-network", route: "server", path: "/server" },
   ];
   const result = [];

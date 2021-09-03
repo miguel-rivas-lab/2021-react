@@ -4,7 +4,6 @@ import Column from "../components/column";
 import Row from "../components/row";
 import ScrollArea from '../components/scroll-area';
 import { setValue, toggleValue } from "../redux/home";
-import classNames from "classnames";
 
 function NumberInput({ label, value = 0, increment = 1, axis }) {
   const dispatch = useDispatch();
@@ -38,6 +37,7 @@ function NumberInput({ label, value = 0, increment = 1, axis }) {
 
 function HomePanel() {
   const { home } = useSelector((state) => state.home);
+  const dispatch = useDispatch();
   return (
     <ScrollArea color="royal-purple">
       <fieldset className="nano-row row-block">
@@ -46,27 +46,27 @@ function HomePanel() {
 
           <Row>
             <Column>
-              <label
-                className={classNames("btn flat charcoal", {
-                  active: home.cover,
-                })}
-              >
-                Cover
-              <input type="checkbox" value={home.cover} />
-              </label>
+            <Btn
+              active={home.cover}
+              color="charcoal"
+              value="Cover"
+              onClick={()=> {
+                dispatch(toggleValue("cover"));
+              }}
+            />
             </Column>
           </Row>
 
           <Row>
             <Column>
-              <label
-                className={classNames("btn flat charcoal", {
-                  active: home.pause,
-                })}
-              >
-                Pause
-              <input type="checkbox" value={home.pause} />
-              </label>
+              <Btn
+                active={home.pause}
+                color="charcoal"
+                value="Pause"
+                onClick={()=> {
+                  dispatch(toggleValue("pause"));
+                }}
+              />
             </Column>
           </Row>
 

@@ -27,7 +27,7 @@ export const homeSlice = createSlice({
       state.home[action.payload.axis] = action.payload.value;
     },
     toggleValue: (state, action: booleanProps) => {
-      state.home[action.payload] = !state.home.cover;
+      state.home[action.payload] = !state.home[action.payload] ;
     },
   }
 });

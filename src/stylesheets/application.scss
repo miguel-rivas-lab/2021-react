@@ -8,4 +8,11 @@
   font-style: normal;
   font-display: block;
 }
+.nano-app {
+  .gallery {
+    .container {
+      max-width: 100%;
+    }
+  }
+}
 @import "~nano-grid/portfolio/react";

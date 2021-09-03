@@ -4,8 +4,7 @@ import { typeEnum } from "../enums/types";
 import { clientEnum } from "../enums/clients";
 import { categoryEnum } from "../enums/categories";
 
-// import h from "./helpers";
-// import { db } from "./firebase";
+import h from "./helpers";
 
 const users = {
   "name": "Jesus",
@@ -1451,62 +1450,48 @@ const projects = [
   return item;
 });
 
-// const all = experiments.concat(projects).sort((a, b) => {
-//   return h.dateToNumber(b.date) - h.dateToNumber(a.date);
-// }).map(item => {
+const all = experiments.concat(projects).sort((a, b) => {
+  return h.dateToNumber(b.date) - h.dateToNumber(a.date);
+}).map(item => {
 
-//   let links = [];
-//   if (item["links"]) {
-//     if (item["links"]["web"]) {
-//       links = item["links"]["web"].map(
-//         link => {
-//           const params = link["params"] ? link["params"] : [];
-//           return {
-//             "url": link["url"],
-//             "text": link["text"],
-//             "params": params,
-//           }
-//         }
-//       );
-//     }
-//     if (item["links"]["github"]) {
-//       links.push({
-//         "url": item["links"]["github"],
-//         "text": "Github",
-//         "params": [],
-//       });
-//     }
-//   }
+  let links = [];
+  if (item["links"]) {
+    if (item["links"]["web"]) {
+      links = item["links"]["web"].map(
+        link => {
+          const params = link["params"] ? link["params"] : [];
+          return {
+            "url": link["url"],
+            "text": link["text"],
+            "params": params,
+          }
+        }
+      );
+    }
+    if (item["links"]["github"]) {
+      links.push({
+        "url": item["links"]["github"],
+        "text": "Github",
+        "params": [],
+      });
+    }
+  }
 
-//   const roles = item["role"].sort();
-//   const tools = item["tools"].sort();
-//   const disabled = item.disabled ? true : false;
+  const roles = item["role"].sort();
+  const tools = item["tools"].sort();
+  const disabled = item.disabled ? true : false;
 
-//   return {
-//     "title": item.title,
-//     "category": item.category,
-//     "client": item.client,
-//     "date": item.date,
-//     "type": item.type,
-//     "disabled": disabled,
-//     "links": links,
-//     "roles": roles,
-//     "tools": tools,
-//   }
-// });
+  return {
+    "title": item.title,
+    "category": item.category,
+    "client": item.client,
+    "date": item.date,
+    "type": item.type,
+    "disabled": disabled,
+    "links": links,
+    "roles": roles,
+    "tools": tools,
+  }
+});
 
-// console.table(users);
-// console.table(all);
-
-// db.collection('users')
-//   .doc("main")
-//   .set(users);
-
-// all.forEach(
-//   (item, index) => {
-//     const i = index < 10 ? `P0${index}` : `P${index}`;
-//     db.collection("projects").doc(i).set(item);
-//   }
-// );
-
-export {users, experiments, projects};
+export {users, all};

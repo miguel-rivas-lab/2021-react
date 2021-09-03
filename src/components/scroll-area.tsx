@@ -1,13 +1,15 @@
 import { ReactElement, ReactNode } from "react";
 import classNames from 'classnames';
+import { colorsType } from '../types/colors';
 
 type ScrollAreaProps = {
   children?: ReactNode,
-  color?: "royal-purple" | "gravel" | "persian-red",
+  color?: colorsType,
+  addClass?: String,
 }
 
-function ScrollArea({ children, color }: ScrollAreaProps): ReactElement {
-  const computedClasses = classNames(color, "scroll-area");
+function ScrollArea({ children, color, addClass}: ScrollAreaProps): ReactElement {
+  const computedClasses = classNames(color, addClass, "scroll-area");
   return (
     <div className={computedClasses}>
       {children}
