@@ -387,7 +387,7 @@ const experiments = [
   },
   {
     date: "2021/08/12",
-    title: "3D Portfolio",
+    title: "Vue Portfolio",
     type: typeEnum.app,
     role: [
       roleEnum.design,
@@ -550,7 +550,7 @@ const experiments = [
   },
   {
     date: "2021/03/26",
-    title: "Letters Portfolio",
+    title: "React Portfolio",
     type: typeEnum.app,
     role: [
       roleEnum.design,
@@ -559,10 +559,21 @@ const experiments = [
     client: clientEnum.miguelRivas,
     tools: [
       toolEnum.react,
+      toolEnum.redux,
+      toolEnum.three,
+      toolEnum.firebase,
       toolEnum.scss,
+      toolEnum.maya,
+      toolEnum.typescript,
       toolEnum.git,
     ],
-    disabled: true,
+    disabled: false,
+    links: {
+      web: [
+        { url: linkWeb("miguel-rivas-2021-2"), text: "App" },
+      ],
+      github: linkGithubDev("miguel-rivas-2021-2"),
+    },
   },
   {
     date: "2017/01/01",

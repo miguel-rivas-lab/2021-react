@@ -21,8 +21,13 @@ function App() {
     "nano-light": theme,
   });
 
+  let base = "/";
+  if(process.env.NODE_ENV === 'production'){
+    base = "/miguel-rivas-2021-2/";
+  }
+
   return (
-    <Router>
+    <Router basename={base}>
       <main className={appClasses}>
         <Row addClass="nano-app">
           <PanelNavigation />

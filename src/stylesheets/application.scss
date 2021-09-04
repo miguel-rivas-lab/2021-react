@@ -15,4 +15,30 @@
     }
   }
 }
+
+.nano-table {
+  text-align: left;
+  border-spacing: 0 .5rem;
+  width: 100%;
+  td {
+    padding: .5rem 1rem;
+  }
+  th {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 14px;
+    padding: .25rem 1rem;
+  }
+  tbody {
+    tr {
+      &:nth-child(odd) {
+        background-color: hsla(0,0%,50.2%,.2);
+      }
+      &:nth-child(even) {
+        background-color: hsla(0,0%,50.2%,.4);
+      }
+
+    }
+  }
+}
 @import "~nano-grid/portfolio/react";
