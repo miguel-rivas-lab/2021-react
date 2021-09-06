@@ -2,7 +2,8 @@
   font-family: "icomoon";
   src: url("~nano-grid/portfolio/fonts/icomoon.eot?xgiqmc");
   src: url("~nano-grid/portfolio/fonts/icomoon.eot?xgiqmc#iefix") format("embedded-opentype"),
-    url("~nano-grid/portfolio/fonts/icomoon.ttf?xgiqmc") format("truetype"), url("~nano-grid/portfolio/fonts/icomoon.woff?xgiqmc") format("woff"),
+    url("~nano-grid/portfolio/fonts/icomoon.ttf?xgiqmc") format("truetype"),
+    url("~nano-grid/portfolio/fonts/icomoon.woff?xgiqmc") format("woff"),
     url("~nano-grid/portfolio/fonts/icomoon.svg?xgiqmc#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
@@ -18,27 +19,27 @@
 
 .nano-table {
   text-align: left;
-  border-spacing: 0 .5rem;
+  border-spacing: 0 0.5rem;
   width: 100%;
   td {
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
   th {
     text-transform: uppercase;
     font-weight: 300;
     font-size: 14px;
-    padding: .25rem 1rem;
+    padding: 0.25rem 1rem;
   }
   tbody {
     tr {
       &:nth-child(odd) {
-        background-color: hsla(0,0%,50.2%,.2);
+        background-color: hsla(0, 0%, 50.2%, 0.2);
       }
       &:nth-child(even) {
-        background-color: hsla(0,0%,50.2%,.4);
+        background-color: hsla(0, 0%, 50.2%, 0.4);
       }
-
     }
   }
 }
+
 @import "~nano-grid/portfolio/react";

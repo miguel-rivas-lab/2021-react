@@ -1,5 +1,5 @@
 import { ReactElement, ReactNode } from "react";
-import { validateSpacing } from "nano-grid/modules/columns-manager";
+import { validateSpacing } from "nano-grid/grid/modules/columns-manager";
 import classNames from 'classnames';
 import { breakpointsType } from "../types/breakpoints";
 import { spacingType } from "../types/spacing";
