@@ -30,7 +30,7 @@ function ServerWorkarea(): ReactElement {
   return (
     <ScrollArea color="royal-purple" addClass="gallery">
       <div className="container">
-        <article>
+        <article className="nano-box">
           <h1>Server Data</h1>
           <hr />
           <table className="nano-table">

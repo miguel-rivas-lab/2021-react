@@ -145,6 +145,7 @@ const experiments = [
       roleEnum.frontend,
       roleEnum.design,
     ],
+    disabled: true,
     client: clientEnum.miguelRivas,
     tools: [
       toolEnum.pug,
@@ -357,9 +358,9 @@ const experiments = [
     ],
     links: {
       web: [
-        { url: linkWeb("miguel-rivas-2014"), text: "App" },
+        { url: linkWeb("2014"), text: "App" },
       ],
-      github: linkGithubDev("miguel-rivas-2014"),
+      github: linkGithubDev("2014"),
     },
   },
   {
@@ -380,9 +381,9 @@ const experiments = [
     ],
     links: {
       web: [
-        { url: linkWeb("miguel-rivas-2016"), text: "App" },
+        { url: linkWeb("2016"), text: "App" },
       ],
-      github: linkGithubDev("miguel-rivas-2016"),
+      github: linkGithubDev("2016"),
     },
   },
   {
@@ -409,9 +410,9 @@ const experiments = [
     ],
     links: {
       web: [
-        { url: linkWeb("miguel-rivas-2021"), text: "App" },
+        { url: linkWeb("2021-vue"), text: "App" },
       ],
-      github: linkGithubDev("miguel-rivas-2021"),
+      github: linkGithubDev("2021-vue"),
     },
   },
   {
@@ -430,15 +431,15 @@ const experiments = [
     ],
     links: {
       web: [
-        { url: linkWeb("miguel-rivas-2018"), text: "Home" },
-        { url: linkWeb("miguel-rivas-2018/drlogic.html"), text: "DrLogic" },
-        { url: linkWeb("miguel-rivas-2018/apap.html"), text: "Apap" },
-        { url: linkWeb("miguel-rivas-2018/bpr.html"), text: "BPR Bank" },
-        { url: linkWeb("miguel-rivas-2018/presidente.html"), text: "Presidente" },
-        { url: linkWeb("miguel-rivas-2018/tests.html"), text: "Tests" },
+        { url: linkWeb("2018"), text: "Home" },
+        { url: linkWeb("2018/drlogic.html"), text: "DrLogic" },
+        { url: linkWeb("2018/apap.html"), text: "Apap" },
+        { url: linkWeb("2018/bpr.html"), text: "BPR Bank" },
+        { url: linkWeb("2018/presidente.html"), text: "Presidente" },
+        { url: linkWeb("2018/tests.html"), text: "Tests" },
         { url: "https://vimeo.com/260621089", text: "Video" },
       ],
-      github: linkGithubDev("miguel-rivas-2018"),
+      github: linkGithubDev("2018"),
     },
   },
   {
@@ -570,9 +571,9 @@ const experiments = [
     disabled: false,
     links: {
       web: [
-        { url: linkWeb("miguel-rivas-2021-2"), text: "App" },
+        { url: linkWeb("2021-react"), text: "App" },
       ],
-      github: linkGithubDev("miguel-rivas-2021-2"),
+      github: linkGithubDev("2021-react"),
     },
   },
   {
@@ -583,6 +584,7 @@ const experiments = [
       roleEnum.frontend,
       roleEnum.design,
     ],
+    disabled: true,
     client: clientEnum.miguelRivas,
     tools: [
       toolEnum.pug,
@@ -1128,6 +1130,7 @@ const projects = [
     role: [
       roleEnum.frontend,
     ],
+    disabled: true,
     client: clientEnum.descubria,
     tools: [
       toolEnum.html,
@@ -1402,7 +1405,7 @@ const projects = [
     disabled: true,
   },
   {
-    date: "2019/01/01",
+    date: "2018/06/25",
     title: "Maryland Onestop",
     type: typeEnum.app,
     role: [
@@ -1419,7 +1422,7 @@ const projects = [
     ],
   },
   {
-    date: "2019/01/02",
+    date: "2018/09/04",
     title: "Formability",
     type: typeEnum.app,
     disabled: false,
