@@ -5,7 +5,7 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 
 function Xwing(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('3d/xwing.glb');
+  const { nodes, materials } = useGLTF('../3d/xwing.glb');
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh

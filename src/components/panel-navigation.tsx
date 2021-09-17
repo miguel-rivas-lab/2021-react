@@ -6,12 +6,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import classNames from "classnames";
 import { useLocation } from 'react-router-dom';
 import { toggleTheme } from '../redux/theme';
+import { toggleUniverse } from '../redux/universe';
 import { togglePanelVisibility } from "../redux/panel";
 
 function playSound() {
-  let context = new AudioContext();
-  let newSound = context.createOscillator();
-  let newGain = context.createGain();
+  const context = new AudioContext();
+  const newSound = context.createOscillator();
+  const newGain = context.createGain();
   newSound.connect(newGain);
   newSound.frequency.value = 300;
   newGain.connect(context.destination);
@@ -20,7 +21,7 @@ function playSound() {
     0.00000001,
     context.currentTime + 0.5
   );
-};
+}
 
 function Navigation(): ReactElement {
   const location = useLocation();
@@ -42,7 +43,6 @@ function Navigation(): ReactElement {
             playSound();
           }}
           active={true}
-          addClass={classNames("tooltip", item.route)}
           icon={item.icon}
         />
       );
@@ -52,7 +52,6 @@ function Navigation(): ReactElement {
           key={`nav-${index}`}
           tag="link"
           to={item.path}
-          addClass={classNames("tooltip", item.route)}
           icon={item.icon}
         />
       );
@@ -64,9 +63,7 @@ function Navigation(): ReactElement {
 function PanelNavigation(): ReactElement {
   const dispatch = useDispatch();
   const { theme } = useSelector((state: any) => state.theme);
-  const themeBtnClasses = classNames(
-    "tooltip", "theme", { "active": !theme }
-  );
+  const themeBtnClasses = classNames({ "active": !theme });
 
   return (
     <Column size="50" addClass="main-panel">
@@ -74,16 +71,15 @@ function PanelNavigation(): ReactElement {
         <Row vertical={true}>
           <Column size="100%-35*2">
             <Navigation />
-            <hr />
+          </Column>
+          <Column mode="suffix" size="130">
             <Btn
               tag="a"
-              addClass="tooltip vue"
+              addClass="btn-vue"
               icon="vuejs"
               color="gravel"
-              href="https://miguel-rivas.github.io/miguel-rivas-2021"
+              href="https://miguel-rivas.github.io/2021-vue"
             />
-          </Column>
-          <Column mode="suffix" size="35">
             <Btn
               onClick={() => {
                 dispatch(toggleTheme());
@@ -93,10 +89,11 @@ function PanelNavigation(): ReactElement {
               color="charcoal"
               addClass={themeBtnClasses}
             />
-          </Column>
-          <Column mode="suffix" size="35">
             <Btn
-              addClass="tooltip universe"
+              onClick={() => {
+                dispatch(toggleUniverse());
+                playSound();
+              }}
               icon="cow"
               color="persian-red"
             />

@@ -1,10 +1,10 @@
 import { ReactElement } from "react";
 import ScrollArea from '../components/scroll-area';
-import { all as ProjectsDB } from "../modules/db.js";
+import { all as ProjectsDB } from "../modules/db";
 
 function Projects(): ReactElement {
-  let projects = [];
-  ProjectsDB.forEach((row, index) => {
+  const projects = [];
+  ProjectsDB.forEach((row) => {
 
     projects.push(
       <tr>

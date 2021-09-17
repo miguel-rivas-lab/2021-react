@@ -3,7 +3,7 @@ import ScrollArea from '../components/scroll-area';
 import Btn from '../components/btn';
 import Column from "../components/column";
 import Row from "../components/row";
-import { all as ProjectsDB, users } from "../modules/db.js";
+import { all as ProjectsDB, users } from "../modules/db";
 import { db } from "../modules/firebase";
 
 function ServerPanel(): ReactElement {

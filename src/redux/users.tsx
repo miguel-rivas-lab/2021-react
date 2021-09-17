@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {users} from '../modules/db.js';
+import {users} from '../modules/db';
 
 export const usersSlice = createSlice({
   name: "users",

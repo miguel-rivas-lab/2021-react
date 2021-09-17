@@ -5,7 +5,7 @@ import { colorsType } from '../types/colors';
 type ScrollAreaProps = {
   children?: ReactNode,
   color?: colorsType,
-  addClass?: String,
+  addClass?: string,
 }
 
 function ScrollArea({ children, color, addClass}: ScrollAreaProps): ReactElement {

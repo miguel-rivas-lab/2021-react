@@ -1,4 +1,3 @@
-import React from 'react';
 import Row from './components/row';
 import Column from './components/column';
 import PanelNavigation from './components/panel-navigation';
@@ -14,16 +13,18 @@ import ServerWorkarea from './views/server-workarea';
 import ServerPanel from './views/server-panel';
 
 function App() {
-  const { panelVisibility } = useSelector((state: any) => state.panelVisibility);
-  const { theme } = useSelector((state: any) => state.theme);
+  const { panelVisibility } = useSelector((state) => state.panelVisibility);
+  const { theme } = useSelector((state) => state.theme);
+  const { universe } = useSelector((state) => state.universe);
   const appClasses = classNames("react-theme", "section-home", {
     "nano-dark": !theme,
     "nano-light": theme,
+    "universe": universe,
   });
 
   let base = "/";
   if(process.env.NODE_ENV === 'production'){
-    base = "/miguel-rivas-2021-2/";
+    base = "/2021-react/";
   }
 
   return (
