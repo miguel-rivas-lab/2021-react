@@ -40,7 +40,7 @@ function HomePanel() {
   const dispatch = useDispatch();
   return (
     <ScrollArea color="royal-purple">
-      <fieldset className="nano-row row-block">
+      <fieldset className="nano-row row-block horizontal">
         <Column>
           <legend>Animation Controllers</legend>
 

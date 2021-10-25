@@ -3,26 +3,27 @@ import { useSelector } from 'react-redux';
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 
-function Xwing(props) {
+function Model(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF('3d/xwing.glb');
+  const { nodes, materials } = useGLTF(`3d/${props.path}.glb`);
   return (
     <group ref={group} {...props} dispose={null}>
       <mesh
-        geometry={nodes.polySurface6.geometry}
+        geometry={nodes.polySurface.geometry}
         material={materials.lambert1}
         position={[0, 0, 1]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={1}
+        scale={props.scale}
       />
     </group>
   );
 };
 
-function Scene({states}) {
+function Scene({ states, currentModel }) {
   const scene = useRef();
+  
   useFrame(() => {
-    if(!states.pause){
+    if (!states.pause) {
       scene.current.rotation.y += states.y * 0.01;
       scene.current.rotation.x += states.x * 0.01;
       scene.current.rotation.z += states.z * 0.01;
@@ -62,7 +63,7 @@ function Scene({states}) {
         position={[-540, 300, 0]}
       />
       <Suspense fallback={null}>
-        <Xwing />
+        <Model path={currentModel} scale={0.7} />
       </Suspense>
       <gridHelper args={[60, 25]} position={[0, 0, 0]} />
     </scene>
@@ -72,10 +73,11 @@ function Scene({states}) {
 function HomeWorkarea() {
   const { home } = useSelector((state) => state.home);
   const { users } = useSelector((state) => state.users);
+  const { currentModel } = useSelector((state) => state.currentModel);
   return (
     <>
       <Canvas className="three-scene">
-        <Scene states={home} />
+        <Scene states={home} currentModel={currentModel} />
       </Canvas>
       {home.cover && <>
         <div className="cover">

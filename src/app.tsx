@@ -8,10 +8,6 @@ import classNames from "classnames";
 // ---------- Views
 import HomeWorkarea from './views/home-workarea.jsx';
 import HomePanel from './views/home-panel.jsx';
-import MonitorWorkarea from './views/monitor-workarea';
-import MonitorPanel from './views/monitor-panel';
-import ServerWorkarea from './views/server-workarea';
-import ServerPanel from './views/server-panel';
 
 function App() {
   const { panelVisibility } = useSelector((state: any) => state.panelVisibility);
@@ -36,24 +32,12 @@ function App() {
               <Route exact path="/">
                 <HomePanel />
               </Route>
-              <Route exact path="/monitor">
-                <MonitorPanel />
-              </Route>
-              <Route exact path="/server">
-                <ServerPanel />
-              </Route>
             </Switch>
           </Column>
           <Column size={panelVisibility ? '100%-350' : '100%-50'} addClass="workarea">
             <Switch>
               <Route exact path="/">
                 <HomeWorkarea />
-              </Route>
-              <Route exact path="/monitor">
-                <MonitorWorkarea />
-              </Route>
-              <Route exact path="/server">
-                <ServerWorkarea />
               </Route>
             </Switch>
           </Column>

@@ -4,9 +4,9 @@ import Column from './column';
 import Btn from './btn';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from "classnames";
-import { useLocation } from 'react-router-dom';
 import { toggleTheme } from '../redux/theme';
-import { togglePanelVisibility } from "../redux/panel";
+// import { togglePanelVisibility } from "../redux/panel";
+import { setCurrentModel } from "../redux/model";
 
 function playSound() {
   let context = new AudioContext();
@@ -23,40 +23,33 @@ function playSound() {
 };
 
 function Navigation(): ReactElement {
-  const location = useLocation();
   const dispatch = useDispatch();
   const navigationRoutes = [
-    { icon: "monster", route: "home", path: "/" },
-    // { icon: "chart-bar", route: "monitor", path: "/monitor" },
-    { icon: "server-network", route: "server", path: "/server" },
+    { icon: "rocket-launch", geometry: "xwing", },
+    { icon: "car", geometry: "car", },
+    { icon: "briefcase", geometry: "backpack", },
+    { icon: "chair-school", geometry: "chair", },
+    // { icon: "sail-boat", geometry: "drakkar", },
+    // { icon: "monster", geometry: "taza", },
+    // { icon: "monster", geometry: "umbrella", },
+    // { icon: "monster", path: "caballo", },
+    // { icon: "monster", path: "llave", },
+    // { icon: "monster", path: "macbook", },
+    // { icon: "monster", path: "plane", },
   ];
   const result = [];
   navigationRoutes.forEach((item, index) => {
-    const isActive = location.pathname === item.path;
-    if (isActive) {
-      result.push(
-        <Btn
-          key={`nav-${index}`}
-          onClick={() => {
-            dispatch(togglePanelVisibility());
-            playSound();
-          }}
-          active={true}
-          addClass={classNames("tooltip", item.route)}
-          icon={item.icon}
-        />
-      );
-    } else {
-      result.push(
-        <Btn
-          key={`nav-${index}`}
-          tag="link"
-          to={item.path}
-          addClass={classNames("tooltip", item.route)}
-          icon={item.icon}
-        />
-      );
-    }
+    result.push(
+      <Btn
+        key={`nav-${index}`}
+        onClick={() => {
+          // dispatch(togglePanelVisibility());
+          dispatch(setCurrentModel(item.geometry));
+          playSound();
+        }}
+        icon={item.icon}
+      />
+    );
   });
   return <>{result}</>;
 }
@@ -65,25 +58,17 @@ function PanelNavigation(): ReactElement {
   const dispatch = useDispatch();
   const { theme } = useSelector((state: any) => state.theme);
   const themeBtnClasses = classNames(
-    "tooltip", "theme", { "active": !theme }
+    { "active": !theme }
   );
 
   return (
     <Column size="50" addClass="main-panel">
       <div className="container">
         <Row vertical={true}>
-          <Column size="100%-35*2">
+          <Column size=",100%-35">
             <Navigation />
-            <hr />
-            <Btn
-              tag="a"
-              addClass="tooltip vue"
-              icon="vuejs"
-              color="gravel"
-              href="https://miguel-rivas.github.io/miguel-rivas-2021"
-            />
           </Column>
-          <Column mode="suffix" size="35">
+          <Column mode="suffix" size=",35">
             <Btn
               onClick={() => {
                 dispatch(toggleTheme());
@@ -92,13 +77,6 @@ function PanelNavigation(): ReactElement {
               icon="brightness-4"
               color="charcoal"
               addClass={themeBtnClasses}
-            />
-          </Column>
-          <Column mode="suffix" size="35">
-            <Btn
-              addClass="tooltip universe"
-              icon="cow"
-              color="persian-red"
             />
           </Column>
         </Row>

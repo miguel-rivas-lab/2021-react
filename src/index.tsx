@@ -8,8 +8,8 @@ import store from './redux/store';
 
 import * as firebase from 'firebase/app';
 import 'firebase/analytics';
-import { app as fireApp } from "./modules/firebase";
-firebase.analytics(fireApp);
+import { firebaseApp } from "./modules/firebase";
+firebase.analytics(firebaseApp);
 
 ReactDOM.render(
   <StrictMode>
