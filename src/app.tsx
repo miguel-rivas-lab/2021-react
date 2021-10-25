@@ -19,7 +19,7 @@ function App() {
 
   let base = "/";
   if(process.env.NODE_ENV === 'production'){
-    base = "/miguel-rivas-2021-2/";
+    base = "/2021-react/";
   }
 
   return (
