@@ -5,7 +5,7 @@ import Btn from './btn';
 import { useDispatch, useSelector } from 'react-redux';
 import classNames from "classnames";
 import { toggleTheme } from '../redux/theme';
-// import { togglePanelVisibility } from "../redux/panel";
+import { togglePanelVisibility } from "../redux/panel";
 import { setCurrentModel } from "../redux/model";
 
 function playSound() {
@@ -22,7 +22,7 @@ function playSound() {
   );
 };
 
-function Navigation(): ReactElement {
+function Navigation(props): ReactElement {
   const dispatch = useDispatch();
   const navigationRoutes = [
     { icon: "rocket-launch", geometry: "xwing", },
@@ -39,14 +39,18 @@ function Navigation(): ReactElement {
   ];
   const result = [];
   navigationRoutes.forEach((item, index) => {
+    const isActive = props.model === item.geometry;
     result.push(
       <Btn
         key={`nav-${index}`}
         onClick={() => {
-          // dispatch(togglePanelVisibility());
           dispatch(setCurrentModel(item.geometry));
-          playSound();
+          if(isActive){
+            dispatch(togglePanelVisibility());
+            playSound();
+          }
         }}
+        active={isActive}
         icon={item.icon}
       />
     );
@@ -57,6 +61,7 @@ function Navigation(): ReactElement {
 function PanelNavigation(): ReactElement {
   const dispatch = useDispatch();
   const { theme } = useSelector((state: any) => state.theme);
+  const { currentModel } = useSelector((state: any) => state.currentModel);
   const themeBtnClasses = classNames(
     { "active": !theme }
   );
@@ -66,7 +71,7 @@ function PanelNavigation(): ReactElement {
       <div className="container">
         <Row vertical={true}>
           <Column size=",100%-35">
-            <Navigation />
+            <Navigation model={currentModel} />
           </Column>
           <Column mode="suffix" size=",35">
             <Btn
