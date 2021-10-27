@@ -25,27 +25,30 @@ function playSound() {
 function Navigation(props): ReactElement {
   const dispatch = useDispatch();
   const navigationRoutes = [
-    { icon: "rocket-launch", geometry: "xwing", },
-    { icon: "car", geometry: "car", },
-    { icon: "briefcase", geometry: "backpack", },
-    { icon: "chair-school", geometry: "chair", },
-    // { icon: "sail-boat", geometry: "drakkar", },
-    // { icon: "monster", geometry: "taza", },
-    // { icon: "monster", geometry: "umbrella", },
-    // { icon: "monster", path: "caballo", },
-    // { icon: "monster", path: "llave", },
-    // { icon: "monster", path: "macbook", },
-    // { icon: "monster", path: "plane", },
+    { icon: "rocket-launch", name: "xwing", polygons: [{ scale: 1, },], },
+    { icon: "car", name: "car", polygons: [{ scale: 0.8, },], },
+    { icon: "briefcase", name: "backpack", polygons: [{ scale: 0.6, },], },
+    // { icon: "chair-school", name: "chair", },
+    // { icon: "sail-boat", name: "drakkar", },
+    // { icon: "monster", name: "taza", },
+    // { icon: "monster", name: "umbrella", },
+    // { icon: "monster", name: "caballo", },
+    // { icon: "monster", name: "llave", },
+    // { icon: "monster", name: "macbook", },
+    // { icon: "monster", name: "plane", },
   ];
   const result = [];
   navigationRoutes.forEach((item, index) => {
-    const isActive = props.model === item.geometry;
+    const isActive = props.model.name === item.name;
     result.push(
       <Btn
         key={`nav-${index}`}
         onClick={() => {
-          dispatch(setCurrentModel(item.geometry));
-          if(isActive){
+          dispatch(setCurrentModel({
+            name: item.name,
+            polygons: item.polygons,
+          }));
+          if (isActive) {
             dispatch(togglePanelVisibility());
             playSound();
           }

@@ -10,7 +10,7 @@ echo "Getting ready for deployment"
 # experiemnt # 2
 # echo '"homepage": "https://miguel-rivas.github.io/2021-react",' >> package.json
 
-git push git@github.com:miguel-rivas/2021-react.git --delete gh-pages
+# git push git@github.com:miguel-rivas/2021-react.git --delete gh-pages
 npm run build
 cd build || exit
 git init

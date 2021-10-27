@@ -5,15 +5,29 @@ import { OrbitControls, useGLTF } from "@react-three/drei";
 
 function Model(props) {
   const group = useRef();
-  const { nodes, materials } = useGLTF(`3d/${props.path}.glb`);
+  const { nodes, materials } = useGLTF(`3d/${props.name}.glb`);
+  // const polygons = props.polygons.forEach(item => {
+  //   console.log(item);
+  //   return (
+  //     <mesh
+  //       geometry={nodes.polySurface.geometry}
+  //       material={materials.lambert1}
+  //       position={[0, 0, 1]}
+  //       rotation={[Math.PI / 2, 0, 0]}
+  //       scale={item.scale}
+  //     />
+  //   );
+  // });
   return (
     <group ref={group} {...props} dispose={null}>
+      {/* {polygons} */}
+      {console.log(props.polygons[0].scale)}
       <mesh
         geometry={nodes.polySurface.geometry}
         material={materials.lambert1}
         position={[0, 0, 1]}
         rotation={[Math.PI / 2, 0, 0]}
-        scale={props.scale}
+        scale={props.polygons[0].scale}
       />
     </group>
   );
@@ -21,7 +35,7 @@ function Model(props) {
 
 function Scene({ states, currentModel }) {
   const scene = useRef();
-  
+
   useFrame(() => {
     if (!states.pause) {
       scene.current.rotation.y += states.y * 0.01;
@@ -63,7 +77,7 @@ function Scene({ states, currentModel }) {
         position={[-540, 300, 0]}
       />
       <Suspense fallback={null}>
-        <Model path={currentModel} scale={0.7} />
+        <Model name={currentModel.name} polygons={currentModel.polygons} />
       </Suspense>
       <gridHelper args={[60, 25]} position={[0, 0, 0]} />
     </scene>
@@ -79,21 +93,21 @@ function HomeWorkarea() {
       <Canvas className="three-scene">
         <Scene states={home} currentModel={currentModel} />
       </Canvas>
-      {home.cover && <>
-        <div className="cover">
-          {users &&
-            <>
-              <h1>
-                {users.middleName} {users.lastName}
-              </h1>
-              <h2>
-                {users.title}
-              </h2>
-            </>
-          }
-        </div>
-      </>
-
+      {
+        home.cover && <>
+          <div className="cover">
+            {users &&
+              <>
+                <h1>
+                  {users.middleName} {users.lastName}
+                </h1>
+                <h2>
+                  {users.title}
+                </h2>
+              </>
+            }
+          </div>
+        </>
       }
 
     </>

@@ -3,7 +3,14 @@ import { createSlice } from "@reduxjs/toolkit";
 export const setCurrentModelSlice = createSlice({
   name: "currentModel",
   initialState: {
-    currentModel: 'xwing',
+    currentModel: {
+      name: 'xwing',
+      polygons: [
+        {
+          scale: 1,
+        },
+      ],
+    },
   },
   reducers: {
     setCurrentModel: (state, action) => {
