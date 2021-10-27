@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/2021-react/static/css/main.b4901a6c.chunk.css",
+    "main.js": "/2021-react/static/js/main.87161174.chunk.js",
+    "main.js.map": "/2021-react/static/js/main.87161174.chunk.js.map",
+    "runtime-main.js": "/2021-react/static/js/runtime-main.0188e2b7.js",
+    "runtime-main.js.map": "/2021-react/static/js/runtime-main.0188e2b7.js.map",
+    "static/css/2.d4edd047.chunk.css": "/2021-react/static/css/2.d4edd047.chunk.css",
+    "static/js/2.e684f84d.chunk.js": "/2021-react/static/js/2.e684f84d.chunk.js",
+    "static/js/2.e684f84d.chunk.js.map": "/2021-react/static/js/2.e684f84d.chunk.js.map",
+    "static/js/3.0188ed35.chunk.js": "/2021-react/static/js/3.0188ed35.chunk.js",
+    "static/js/3.0188ed35.chunk.js.map": "/2021-react/static/js/3.0188ed35.chunk.js.map",
+    "index.html": "/2021-react/index.html",
+    "static/css/2.d4edd047.chunk.css.map": "/2021-react/static/css/2.d4edd047.chunk.css.map",
+    "static/css/main.b4901a6c.chunk.css.map": "/2021-react/static/css/main.b4901a6c.chunk.css.map",
+    "static/js/2.e684f84d.chunk.js.LICENSE.txt": "/2021-react/static/js/2.e684f84d.chunk.js.LICENSE.txt",
+    "static/media/application.scss": "/2021-react/static/media/montserrat-latin-600-normal.d7b7fa75.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0188e2b7.js",
+    "static/css/2.d4edd047.chunk.css",
+    "static/js/2.e684f84d.chunk.js",
+    "static/css/main.b4901a6c.chunk.css",
+    "static/js/main.87161174.chunk.js"
+  ]
+}
